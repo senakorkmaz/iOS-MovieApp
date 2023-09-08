@@ -14,6 +14,7 @@ class HomeViewModel: ObservableObject{
     @Published var genre: [Genre] = []
     @Published var selectedGenre = DeveloperPreview.instance.genre
     @Published var errorMsg = ""
+    @Published var selectedMovie: Movie? = nil
     
     private let movieService = MovieService()
     

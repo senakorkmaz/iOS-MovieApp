@@ -53,6 +53,10 @@
 		A62B809C2AA7A7C900210DC5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B80792AA7A7C900210DC5 /* Endpoint.swift */; };
 		A62B80A42AA7B56300210DC5 /* Poppins.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B80A32AA7B56300210DC5 /* Poppins.swift */; };
 		A62B80A82AA7B84800210DC5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B80A72AA7B84800210DC5 /* HomeView.swift */; };
+		A65DC8BD2AAB8676000300EB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DC8BC2AAB8676000300EB /* DetailView.swift */; };
+		A65DC8C12AAB86A2000300EB /* DetailModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DC8C02AAB86A2000300EB /* DetailModelView.swift */; };
+		A65DC8C52AAB8806000300EB /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DC8C42AAB8806000300EB /* Detail.swift */; };
+		A65DC8C72AAB9EFC000300EB /* DetailSectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DC8C62AAB9EFC000300EB /* DetailSectionCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +108,10 @@
 		A62B809D2AA7AA4C00210DC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A62B80A32AA7B56300210DC5 /* Poppins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poppins.swift; sourceTree = "<group>"; };
 		A62B80A72AA7B84800210DC5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A65DC8BC2AAB8676000300EB /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		A65DC8C02AAB86A2000300EB /* DetailModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModelView.swift; sourceTree = "<group>"; };
+		A65DC8C42AAB8806000300EB /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		A65DC8C62AAB9EFC000300EB /* DetailSectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSectionCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,7 @@
 				A612197D2AA8864700DA856E /* MovieCard.swift */,
 				A612197F2AA8899400DA856E /* CustomImageView.swift */,
 				A612198E2AA9F3FF00DA856E /* GenreCard.swift */,
+				A65DC8C62AAB9EFC000300EB /* DetailSectionCard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,7 +246,6 @@
 				A62B80742AA7A7C900210DC5 /* String.swift */,
 				A62B80752AA7A7C900210DC5 /* UIApplication.swift */,
 				A62B80762AA7A7C900210DC5 /* Optional.swift */,
-				A62B80772AA7A7C900210DC5 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -245,6 +253,7 @@
 		A62B809E2AA7AC5600210DC5 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A65DC8B62AAB8540000300EB /* Detail */,
 				A62B80A62AA7B81400210DC5 /* Home */,
 				A62B809F2AA7ACCB00210DC5 /* Base */,
 			);
@@ -266,6 +275,7 @@
 		A62B80A02AA7ACD500210DC5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A62B80772AA7A7C900210DC5 /* Color.swift */,
 				A62B806D2AA7A7C800210DC5 /* Constants.swift */,
 				A62B80A32AA7B56300210DC5 /* Poppins.swift */,
 				A61219812AA8977000DA856E /* MovieCardType.swift */,
@@ -281,6 +291,40 @@
 				A61219782AA8852700DA856E /* Model */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		A65DC8B62AAB8540000300EB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A65DC8C32AAB87F1000300EB /* Model */,
+				A65DC8B82AAB855B000300EB /* View */,
+				A65DC8BA2AAB8648000300EB /* ViewModel */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		A65DC8B82AAB855B000300EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A65DC8BC2AAB8676000300EB /* DetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A65DC8BA2AAB8648000300EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A65DC8C02AAB86A2000300EB /* DetailModelView.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A65DC8C32AAB87F1000300EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A65DC8C42AAB8806000300EB /* Detail.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,16 +419,20 @@
 			files = (
 				A62B80982AA7A7C900210DC5 /* UIApplication.swift in Sources */,
 				A612198B2AA9DF6000DA856E /* HomeViewModel.swift in Sources */,
+				A65DC8C52AAB8806000300EB /* Detail.swift in Sources */,
 				A612198D2AA9E43B00DA856E /* Genre.swift in Sources */,
 				A62B80942AA7A7C900210DC5 /* View.swift in Sources */,
 				A61219822AA8977000DA856E /* MovieCardType.swift in Sources */,
 				A62B80A82AA7B84800210DC5 /* HomeView.swift in Sources */,
 				A62B80992AA7A7C900210DC5 /* Optional.swift in Sources */,
 				A61219872AA8AF3700DA856E /* DefaultUrlBuilder.swift in Sources */,
+				A65DC8BD2AAB8676000300EB /* DetailView.swift in Sources */,
 				A61219892AA8C3E600DA856E /* MovieService.swift in Sources */,
 				A612197E2AA8864700DA856E /* MovieCard.swift in Sources */,
+				A65DC8C72AAB9EFC000300EB /* DetailSectionCard.swift in Sources */,
 				A62B809A2AA7A7C900210DC5 /* Color.swift in Sources */,
 				A62B80962AA7A7C900210DC5 /* PreviewProvider.swift in Sources */,
+				A65DC8C12AAB86A2000300EB /* DetailModelView.swift in Sources */,
 				A62B80462AA7A71500210DC5 /* ContentView.swift in Sources */,
 				A612198F2AA9F3FF00DA856E /* GenreCard.swift in Sources */,
 				A61219772AA871A200DA856E /* SearchBar.swift in Sources */,
@@ -540,7 +588,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Movie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.senanur.Movie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -571,7 +619,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Movie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.senanur.Movie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

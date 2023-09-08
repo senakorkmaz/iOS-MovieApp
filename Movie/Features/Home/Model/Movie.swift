@@ -27,7 +27,9 @@ struct Movie: Codable, Identifiable {
     let id: Int
     let originalLanguage, originalTitle, overview: String
     let popularity: Double
-    let posterPath, releaseDate, title: String
+    let posterPath: String?
+    let releaseDate: String
+    let title: String
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
@@ -50,6 +52,19 @@ struct Movie: Codable, Identifiable {
 
 extension Movie {
     var imageUrlString: String {
-        Constants.imageBaseUrl + posterPath
+        Constants.imageBaseUrl + posterPath.stringValue
     }
+    
+    func getImage(for type: MovieImageType) -> String{
+        switch type{
+        case .poster:
+            return Constants.imageBaseUrl + (posterPath == nil ? backdropPath.stringValue : posterPath.stringValue)
+        case .backdrop:
+            return Constants.imageBaseUrl + (backdropPath == nil ? posterPath.stringValue : backdropPath.stringValue)
+        }
+    }
+}
+
+enum MovieImageType {
+    case poster, backdrop
 }

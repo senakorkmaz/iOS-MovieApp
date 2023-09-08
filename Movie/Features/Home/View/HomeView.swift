@@ -22,6 +22,9 @@ struct HomeView: View {
                     HStack {
                         ForEach(vm.trendingMovies) { movie in
                             MovieCard(movie: movie)
+                                .onTapGesture {
+                                    vm.selectedMovie = movie
+                                }
                         }
                     }
                 }
@@ -46,6 +49,9 @@ struct HomeView: View {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())], spacing: 20){
                     ForEach(vm.moviedForSelectedGerne){ movie in
                         MovieCard(movie: movie,type: .grid)
+                            .onTapGesture {
+                                vm.selectedMovie = movie
+                            }
                     }
                 }
             }
@@ -54,6 +60,9 @@ struct HomeView: View {
         .preferredColorScheme(.dark)
         .padding()
         .background(Color.AppBackgroundColor)
+        .fullScreenCover(item: $vm.selectedMovie) { movie in
+            DetailView(movie: movie)
+        }
         .task{
             await vm.fetchTrendingMovie()
             await vm.fetchTopRatedMovie()

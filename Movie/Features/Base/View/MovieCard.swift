@@ -27,6 +27,10 @@ extension MovieCard{
 
 struct MovieCard_Previews: PreviewProvider {
     static var previews: some View {
-        MovieCard(movie: dev.movie)
+        HStack{
+            MovieCard(movie: dev.movie)
+            MovieCard(movie: dev.movie,type: .grid)
+        }
+       
     }
 }
