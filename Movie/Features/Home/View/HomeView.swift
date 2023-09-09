@@ -18,6 +18,8 @@ struct HomeView: View {
                 Text("What do you want to watch?")
                     .poppins(.bold,20)
                 SearchBar(searchTxt: $searchTxt)
+                Text("Trending Movies")
+                    .poppins(.bold,18)
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack {
                         ForEach(vm.trendingMovies) { movie in
@@ -45,13 +47,15 @@ struct HomeView: View {
                         }
                     }
                 }
-                
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())], spacing: 20){
-                    ForEach(vm.moviedForSelectedGerne){ movie in
-                        MovieCard(movie: movie,type: .grid)
-                            .onTapGesture {
-                                vm.selectedMovie = movie
-                            }
+                ScrollView{
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())], spacing: 20){
+                       
+                        ForEach(vm.moviedForSelectedGerne){ movie in
+                            MovieCard(movie: movie,type: .grid)
+                                .onTapGesture {
+                                    vm.selectedMovie = movie
+                                }
+                        }
                     }
                 }
             }
@@ -65,7 +69,6 @@ struct HomeView: View {
         }
         .task{
             await vm.fetchTrendingMovie()
-            await vm.fetchTopRatedMovie()
             await vm.fetchGenre()
             await vm.fetchMovieForSelectedGenre()
         }

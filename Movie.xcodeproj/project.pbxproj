@@ -57,6 +57,8 @@
 		A65DC8C12AAB86A2000300EB /* DetailModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DC8C02AAB86A2000300EB /* DetailModelView.swift */; };
 		A65DC8C52AAB8806000300EB /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DC8C42AAB8806000300EB /* Detail.swift */; };
 		A65DC8C72AAB9EFC000300EB /* DetailSectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DC8C62AAB9EFC000300EB /* DetailSectionCard.swift */; };
+		A65DC8C92AACE4A3000300EB /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DC8C82AACE4A3000300EB /* Review.swift */; };
+		A65DC8CB2AACE8E9000300EB /* ReviewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DC8CA2AACE8E9000300EB /* ReviewCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +114,8 @@
 		A65DC8C02AAB86A2000300EB /* DetailModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModelView.swift; sourceTree = "<group>"; };
 		A65DC8C42AAB8806000300EB /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		A65DC8C62AAB9EFC000300EB /* DetailSectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSectionCard.swift; sourceTree = "<group>"; };
+		A65DC8C82AACE4A3000300EB /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		A65DC8CA2AACE8E9000300EB /* ReviewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 				A612197F2AA8899400DA856E /* CustomImageView.swift */,
 				A612198E2AA9F3FF00DA856E /* GenreCard.swift */,
 				A65DC8C62AAB9EFC000300EB /* DetailSectionCard.swift */,
+				A65DC8CA2AACE8E9000300EB /* ReviewCard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				A65DC8C42AAB8806000300EB /* Detail.swift */,
+				A65DC8C82AACE4A3000300EB /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -440,9 +446,11 @@
 				A62B80972AA7A7C900210DC5 /* String.swift in Sources */,
 				A62B80912AA7A7C900210DC5 /* Constants.swift in Sources */,
 				A62B80A42AA7B56300210DC5 /* Poppins.swift in Sources */,
+				A65DC8C92AACE4A3000300EB /* Review.swift in Sources */,
 				A61219852AA8AE3600DA856E /* ApiConstructor.swift in Sources */,
 				A62B809C2AA7A7C900210DC5 /* Endpoint.swift in Sources */,
 				A62B80952AA7A7C900210DC5 /* Image.swift in Sources */,
+				A65DC8CB2AACE8E9000300EB /* ReviewCard.swift in Sources */,
 				A61219802AA8899400DA856E /* CustomImageView.swift in Sources */,
 				A612197C2AA8856500DA856E /* Movie.swift in Sources */,
 			);

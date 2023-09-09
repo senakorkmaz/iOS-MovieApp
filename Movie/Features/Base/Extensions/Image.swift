@@ -35,4 +35,12 @@ extension Image {
     static var CancelIcon: Image {
         Image(systemName: "xmark.circle.fill")
     }
+    
+    static var VoteImage: Image {
+        Image(systemName: "square.and.arrow.down")
+    }
+    
+    static var StarImage: Image {
+        Image(systemName: "star")
+    }
 }

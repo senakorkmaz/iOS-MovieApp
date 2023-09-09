@@ -32,13 +32,14 @@ struct DetailView: View {
             VStack{
                 HStack{
                     Image.CalendarIcon
-                    Text(vm.movie.releaseDate ?? "2023")
+                    Text(vm.movie.releaseDate)
                     Text(" | ")
-                    Image.ClockIcon
-                    Text("148 Minutes")
+                    Image.VoteImage
+                    Text("\(vm.movie.voteCount)")
                     Text(" | ")
-                    Image.GenreIcon
-                    Text("Action")
+                    Image.StarImage
+                    Text("\(vm.movie.voteAverage.formatted())")
+                  
                 }
                 .foregroundColor(.AppGrayColor2)
                 .frame(maxWidth: .infinity)
@@ -52,10 +53,24 @@ struct DetailView: View {
                                     vm.selectedSection = section
                                 }
                             }
-                        
                     }
+                    Spacer()
                 }
                
+                switch vm.selectedSection{
+                    case .about:
+                    Text(vm.movie.overview)
+                    case .review:
+                    ScrollView{
+                        VStack{
+                            ForEach(vm.reviews){ review in
+                                ReviewCard(review: review)
+                                
+                            }
+                        }
+                    }
+                    
+                }
                 Spacer()
             }
             .padding()
@@ -63,14 +78,22 @@ struct DetailView: View {
         }
         .preferredColorScheme(.dark)
         .background(Color.AppBackgroundColor)
+        .task {
+            await vm.fetchReview()
+        }
     }
-    var posterImageHeight: CGFloat{
+    var backdropImageHeight: CGFloat{
         screenHeight * 0.35
     }
     
-    var backdropImageSize: CGFloat{
+    var posterImageHeight : CGFloat{
         screenHeight * 0.20
     }
+    
+    var posterImageWidth : CGFloat{
+        screenWidth * 0.30
+    }
+    
     var backdropImageOffset: CGFloat{
         screenHeight * 0.15
     }
@@ -94,7 +117,7 @@ private extension DetailView{
     var header: some View{
         ZStack(alignment: .leading){
             ZStack(alignment: .top){
-                CustomImageView(itemWidth: screenWidth, itemHeight: posterImageHeight, movie: vm.movie)
+                CustomImageView(itemWidth: screenWidth, itemHeight: backdropImageHeight, movie: vm.movie,imageType: .backdrop)
                 HStack{
                     Image.BackIcon
                         .onTapGesture {
@@ -111,13 +134,15 @@ private extension DetailView{
             }
             
             HStack{
-                CustomImageView(itemWidth: backdropImageSize, itemHeight: backdropImageSize, movie: vm.movie,imageType: .backdrop)
+                CustomImageView(itemWidth: posterImageWidth, itemHeight: posterImageHeight, movie: vm.movie)
+                    .shadow(color: Color(.sRGBLinear, white: 1, opacity: 0.20),radius: 20)
+                
                 Text(vm.movie.title)
                     .minimumScaleFactor(0.5)
                     .padding(.top,titleOffset)
             }
             .padding()
-            .offset(y: backdropImageSize)
+            .offset(y: posterImageHeight)
         }
     }
 }

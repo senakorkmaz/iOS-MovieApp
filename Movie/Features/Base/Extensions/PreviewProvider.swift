@@ -40,6 +40,6 @@ class DeveloperPreview {
     
     let genre = Genre(id: 28, name: "Action")
     
-//    let review = Review(author: "Test Author", authorDetails: nil, content: "Test content", createdAt: "2023", id: "Test", updatedAt: "Test", url: "Test")
+    let review = Review(author: "Test Author", authorDetails: nil, content: "Test content", createdAt: "2023", id: "Test", updatedAt: "Test", url: "Test")
     
 }
